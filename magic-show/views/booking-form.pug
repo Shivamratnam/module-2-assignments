@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title #{title}
+    body
+        h1 Booking Form
+        form(action="/confirmation", method="post")
+            label Show Name: 
+            input(type="text", name="showname" value="Abc")
+            br
+            label Price Per Ticket: 
+            input(type="number", name="price" value="200")
+            br
+            label Customer Name: 
+            input(type="text", name="custname")
+            br
+            label Mobile Number: 
+            input(type="number", name="mobile")
+            br
+            label Seats Available: 
+            input(type="number", name="seatsAvail" value="20")
+            br
+            label No.of Seats to Book: 
+            input(type="number", name="seatsBook")
+            br
+            input(type="submit", value="Book")
+            
+            

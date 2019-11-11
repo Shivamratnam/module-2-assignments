@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title #{title}
+    body
+        form(action="/book", method="post")
+            table(border="1" textalign="center")
+                tr
+                    th Show Name
+                    th Location
+                    th Date
+                    th Price
+                    th Available Seats
+                    th Book
+                each show in showInfo
+                    tr
+                        td 
+                            label(name="showname") #{show.showName}
+                        td #{show.location}
+                        td #{show.date}
+                        td #{show.price}
+                        td #{show.seats}
+                        td
+                            if show.seats>0
+                                input(type="submit" value="Book Now")
+                            if show.seats<=0
+                                label Sold
