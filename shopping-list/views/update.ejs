@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./head.ejs') %>
+    <body>
+        <h1 class="text-center">Update Item</h1>
+        <form action="/update" method="POST">
+            <table class="table table-stripped text-center" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                <tr >
+                    <td> <label for="name">Item Name</label> </td>
+                    <td> <input type="text" name="name" value="<%= name %>" > </td>
+                </tr>
+                <tr >
+                    <td> <label for="price">Item Price</label> </td>
+                    <td> <input type="number" name="price" value="<%= price %>" > </td>
+                </tr>
+                <tr >
+                    <td> <label for="quantity">Item Quantity</label> </td>
+                    <td> <input type="number" name="quantity" value="<%= quantity %>" > </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" class="btn btn-success">Update</button>
+                        <a href="/cancel" class="btn btn-warning">Cancel</a>
+                    </td>
+                </tr>
+                <input type="hidden" name="_id", value="<%= _id %>">
+            </table>
+        </form>
+    </body>
+</html>

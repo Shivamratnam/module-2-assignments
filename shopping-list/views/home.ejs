@@ -1,45 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- CDN for bootstrap & query -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <!-- CDN for bootstrap & query -->
-    <title> <%= title %> </title>
-</head>
-<body>
-    <h1 class="text-center">Shopping List</h1>
-    <table class="table table-stripped text-center" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-        <tr>
-            <th class="text-center">Sr. No.</th>
-            <th class="text-center">Name</th>
-            <th class="text-center">Price</th>
-            <th class="text-center">Quantity</th>
-            <th class="text-center" colspan="2">Action</th>
-        </tr>
-        <% items.forEach(list => { %>
-        <tr >
-            <td>#</td>
-            <td> <%= list.name %> </td>
-            <td> <%= list.quantity %> </td>
-            <td> <%= list.price %> </td>
-            <td>
-                <button class="btn btn-info">UPDATE</button>
-            </td>
-            <td>
-                <button class="btn btn-danger">DELETE</button>
-            </td>
-        </tr>
-        <% }); %>
-        <tr>
-            <td colspan="6">
-                <button class="btn btn-success">ADD NEW LIST</button>
-            </td>
-        </tr>
-    </table>
-</body>
+    <%- include('./head.ejs') %>
+    <body>
+        <h1 class="text-center">Shopping List</h1>
+            <table class="table table-stripped text-center" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+                <tr>
+                    <th class="text-center">Sr. No.</th>
+                    <th class="text-center">Name</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center" colspan="2">Action</th>
+                </tr>
+                <% items.forEach(list => { %>
+                <tr >
+                    <td>#</td>
+                    <td> <%= list.name %> </td>
+                    <td> <%= list.quantity %> </td>
+                    <td> <%= list.price %> </td>
+                    <td>
+                        <a href="/update/<%= list._id %>" class="btn btn-info">UPDATE</a>
+                    </td>
+                    <td>
+                        <a href="/delete/<%= list._id %>" class="btn btn-danger">DELETE</a>
+                    </td>
+                </tr>
+                <% }); %>
+                <tr>
+                    <td colspan="6">
+                        <a href="/add" type="submit" class="btn btn-success">ADD NEW LIST</a>
+                    </td>
+                </tr>
+            </table>
+        <script>
+            function submitForm(){
+                alert('form submitted');
+                let form = document.getElementById('homeForm');
+                form.
+                form.action = 'http://localhost:8080/add';
+                form.method = 'POST';
+            }
+        </script>
+    </body>
 </html>

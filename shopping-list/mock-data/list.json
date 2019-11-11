@@ -1,25 +1,29 @@
-[  
+[
     {
         "_id": 1,
         "name": "Book",
         "quantity": 3,
         "price": 20
-    },{
+    },
+    {
         "_id": 2,
         "name": "Bag",
         "quantity": 1,
         "price": 200
-    },{
+    },
+    {
         "_id": 3,
         "name": "Shoes",
         "quantity": 1,
         "price": 900
-    },{
+    },
+    {
         "_id": 4,
         "name": "Umbrella",
         "quantity": 1,
         "price": 300
-    },{
+    },
+    {
         "_id": 5,
         "name": "Pen",
         "quantity": 5,
