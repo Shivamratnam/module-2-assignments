@@ -1,0 +1,15 @@
+{
+  "name": "chat-application",
+  "version": "1.0.0",
+  "description": "Chat application using the Socket.IO module using nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Shivamratnam Tiwari",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^3.3.4",
+    "socket.io": "^2.3.0"
+  }
+}
