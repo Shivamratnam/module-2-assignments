@@ -6,22 +6,22 @@ html
         h1 Booking Form
         form(action="/confirmation", method="post")
             label Show Name: 
-            input(type="text", name="showname" value="Abc")
+            input(type="text", name="showname" value=data.showName readonly="readonly")
             br
             label Price Per Ticket: 
-            input(type="number", name="price" value="200")
+            input(type="number", name="price" value=data.price readonly="readonly")
             br
             label Customer Name: 
-            input(type="text", name="custname")
+            input(type="text", name="custname" required autofocus)
             br
             label Mobile Number: 
-            input(type="number", name="mobile")
+            input(type="number", name="mobile" required)
             br
             label Seats Available: 
-            input(type="number", name="seatsAvail" value="20")
+            input(type="number", name="seatsAvail" value=data.seats readonly="readonly")
             br
             label No.of Seats to Book: 
-            input(type="number", name="seatsBook")
+            input(type="number", name="seatsBook" required max=data.seats min=1)
             br
             input(type="submit", value="Book")
             

@@ -138,9 +138,4 @@ route.post('/add', (req, res) => {
     });
 });
 
-// Cancel
-route.get('/cancel', (req, res) => {
-    res.redirect('/');
-});
-
 module.exports = route;

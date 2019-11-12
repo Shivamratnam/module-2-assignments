@@ -7,8 +7,28 @@ const route = express.Router();
 route.get('/', (req, res) => {
     getMagicShowData(req, res);
 });
-route.post('/book', (req, res) => {
-    res.render('booking-form');
+route.get('/book?:id', (req, res) => {
+    let id = req.query.id;
+    let filePath = './mock-data/showInfo.json';
+    fs.readFile(filePath, (err, data) => {
+        if(err){
+            console.log(err);
+        } else {
+            let result = JSON.parse(data);
+            let len = result.length;
+            let item = {};
+            for(let i = 0; i < len; i++){
+                if(result[i]._id == id){
+                    item = result[i];
+                    break;
+                }
+            }
+            res.render('booking-form', {
+                title: "Book your show",
+                data: item 
+            });
+        }
+    });
 });
 
 route.post('/confirmation', (req, res) => {
@@ -24,6 +44,7 @@ route.post('/confirmation', (req, res) => {
             if(err){
                 console.log(err);
             } else {
+                console.log(req.body);
                 res.render('confirmation-page', {
                     showname: req.body.showname,
                     custname: req.body.custname,
